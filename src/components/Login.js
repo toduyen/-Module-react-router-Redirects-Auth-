@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import fakeAuth from '../components/faceKae';
+import fakeAuth from './faceAuth';
 import {Redirect} from "react-router-dom";
+import { connect } from 'react-redux';
 class Login extends Component {
   state = { redirectToReferrer: false };
   login = () => {
@@ -8,17 +9,33 @@ class Login extends Component {
       this.setState({ redirectToReferrer: true });
     });
   };
+  thucThiKhiCoMa = ()  => {
+    if(this.props.reducerStateLoginAuth.dataLogin == 'xmZjFzpHjFc2fEYQy1odP62MJaQ2')
+    {
+      fakeAuth.authenticate(() => {
+        this.setState({ redirectToReferrer: true });
+      });
+    }
+    else
+    {
+      return null;
+    }
+  }
   render() {
+    console.log(this.props.reducerStateLoginAuth.dataLogin);
     let { from } = this.props.location.state || { from: { pathname: "/" } };
     let { redirectToReferrer } = this.state;
     if (redirectToReferrer) return <Redirect to={from} />;
     return (
       <div>
-        <p>Vị trí bạn đang đứng là {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
+          {this.thucThiKhiCoMa()}
       </div>
     );
   }
 }
- 
-export default Login;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    reducerStateLoginAuth: state.reducerStateLoginAuth
+  }
+}
+export default connect(mapStateToProps)(Login)

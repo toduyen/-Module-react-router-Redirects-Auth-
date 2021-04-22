@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router,withRouter} from "react-router-dom";
-import fakeAuth from '../src/components/faceKae';
+import fakeAuth from './components/faceAuth';
 import UserInfo from "./FirebaseAuth/UserInfoAuth";
 const AuthButton = withRouter(
   ({ history }) =>
@@ -36,11 +36,9 @@ class App extends Component {
         <div>
           <AuthButton />
           <UserInfo />
-         
         </div>
       </Router>
     );
   }
 }
- 
 export default App;

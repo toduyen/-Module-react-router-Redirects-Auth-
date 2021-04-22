@@ -4,7 +4,6 @@ class LoginAuth extends Component {
     render() {
         return (
             <div className="login">
-                <p>Please click button below to sign in!</p>
                 <button className="github" onClick={() => this.props.authenticate("Github")}>
                     Log In With Github
                 </button>

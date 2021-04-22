@@ -1,5 +1,5 @@
 import React from 'react';
-import fakeAuth from '../components/faceKae';
+import fakeAuth from '../components/faceAuth';
 import {Route,Redirect} from "react-router-dom";
 const  PrivateRoute = ({ component: Component, ...rest }) => {
     return (

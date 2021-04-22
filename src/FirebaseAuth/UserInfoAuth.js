@@ -4,10 +4,12 @@ import Login from "./LoginAuth";
 import {firebaseApp} from "./base";
 import RouterURL from "../router/RouterURL";
 import {Link} from "react-router-dom";
+import { connect } from "react-redux";
 class UserInfoAuth extends Component {
     state = {
         email: null,
-        displayName: null
+        displayName: null,
+        uid: null
     };
 
     componentDidMount() {
@@ -21,9 +23,9 @@ class UserInfoAuth extends Component {
     }
 
     authHandler = async authData => {
-        console.log(authData);
+        this.props.layID(authData.user.uid); // xmZjFzpHjFc2fEYQy1odP62MJaQ2
         const user = authData.user;
-        this.setState({email: user.email, displayName: user.displayName});
+        this.setState({email: user.email, displayName: user.displayName , uid:user.uid});
     };
 
     authenticate = provider => {
@@ -40,11 +42,10 @@ class UserInfoAuth extends Component {
         await firebase
             .auth()
             .signOut();
-        this.setState({email: null, displayName: null});
+        this.setState({email: null, displayName: null, uid:null});
     };
 
     render() {
-        console.log(this.state);
         const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>;
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
@@ -65,5 +66,16 @@ class UserInfoAuth extends Component {
         );
     }
 }
-
-export default UserInfoAuth;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        reducerStateLoginAuth: state.reducerStateLoginAuth
+    }
+}
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        layID: (getString) => {
+            dispatch({type:"CHANGE_STATE_LOGIN",getString})
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(UserInfoAuth)
