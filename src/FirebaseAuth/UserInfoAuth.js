@@ -2,7 +2,8 @@ import React, {Component, Fragment} from "react";
 import firebase from "firebase";
 import Login from "./LoginAuth";
 import {firebaseApp} from "./base";
-
+import RouterURL from "../router/RouterURL";
+import {Link} from "react-router-dom";
 class UserInfoAuth extends Component {
     state = {
         email: null,
@@ -43,24 +44,22 @@ class UserInfoAuth extends Component {
     };
 
     render() {
+        console.log(this.state);
         const logout = <button onClick={this.logout}>Log Out!</button>;
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
         }
         return (
             <Fragment>
-                <div className="user-info">
-                    <label>User name:</label>
-                    <span type="text" id="email">
-                        {this.state.displayName}
-                    </span>
-                </div>
-                <div className="user-info">
-                    <label>Email:</label>
-                    <span type="text" id="email">
-                        {this.state.email}
-                    </span>
-                </div>
+                <ul>
+                    <li>
+                    <Link to="/public">Public Page</Link>
+                    </li>
+                    <li>
+                    <Link to="/protected">Protected Page</Link>
+                    </li>
+                </ul>
+                <RouterURL/>
                 <div>{logout}</div>
             </Fragment>
         );
