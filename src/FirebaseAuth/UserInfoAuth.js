@@ -45,7 +45,7 @@ class UserInfoAuth extends Component {
 
     render() {
         console.log(this.state);
-        const logout = <button onClick={this.logout}>Log Out!</button>;
+        const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>;
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
         }
