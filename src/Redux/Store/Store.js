@@ -1,4 +1,4 @@
-import reducerStateLoginAuth from  '../reducerStateLoginAuth';
+import reducerStateLoginAuth from  '../Reducer/reducerStateLoginAuth';
 var redux = require('redux');
 let reducerThongHop = redux.combineReducers({
     reducerStateLoginAuth: reducerStateLoginAuth
