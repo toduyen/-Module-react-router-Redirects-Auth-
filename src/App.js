@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {BrowserRouter as Router,Link,withRouter} from "react-router-dom";
 import RouterURL from "./router/RouterURL";
 import fakeAuth from '../src/components/faceKae';
-import UserInfo from "./Firebase/UserInfoAuth";
+import UserInfo from "./FirebaseAuth/UserInfoAuth";
 const AuthButton = withRouter(
   ({ history }) =>
     fakeAuth.isAuthenticated ? (
