@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import fakeAuth from '../components/faceKae';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter
-  } from "react-router-dom";
+import {Redirect} from "react-router-dom";
 class Login extends Component {
   state = { redirectToReferrer: false };
   login = () => {

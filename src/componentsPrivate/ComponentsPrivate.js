@@ -1,12 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import fakeAuth from '../components/faceKae';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter
-  } from "react-router-dom";
+import {Route,Redirect} from "react-router-dom";
 const  PrivateRoute = ({ component: Component, ...rest }) => {
     return (
       <Route

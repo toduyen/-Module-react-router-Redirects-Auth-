@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Link,
-  withRouter
-} from "react-router-dom";
+import {BrowserRouter as Router,Link,withRouter} from "react-router-dom";
 import RouterURL from "./router/RouterURL";
 import fakeAuth from '../src/components/faceKae';
 const AuthButton = withRouter(

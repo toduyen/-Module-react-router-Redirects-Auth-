@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter
-  } from "react-router-dom";
+import {Route} from "react-router-dom";
 import Login from '../components/Login';
 import Protecred from '../components/Protecred';
 import Public from '../components/Public';
