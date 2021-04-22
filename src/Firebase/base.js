@@ -10,5 +10,5 @@ const firebaseApp = firebase.initializeApp({
     appId: "1:368706777855:web:230bb006041bcf82"
 });
 const base = Rebase.createClass(firebase.database());
-export { firebaseApp };
+export {firebaseApp};
 export default base;
