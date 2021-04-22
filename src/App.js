@@ -6,30 +6,6 @@ import {
 } from "react-router-dom";
 import RouterURL from "./router/RouterURL";
 import fakeAuth from '../src/components/faceKae';
-////////////////////////////////////////////////////////////
-// 1. Click the public page
-// 2. Click the protected page
-// 3. Log in
-// 4. Click the back button, note the URL each time
-
-function AuthExample() {
-  return (
-    <Router>
-      <div>
-        <AuthButton />
-        <ul>
-          <li>
-            <Link to="/public">Public Page</Link>
-          </li>
-          <li>
-            <Link to="/protected">Protected Page</Link>
-          </li>
-        </ul>
-        <RouterURL/>
-      </div>
-    </Router>
-  );
-}
 const AuthButton = withRouter(
   ({ history }) =>
     fakeAuth.isAuthenticated ? (
@@ -47,4 +23,27 @@ const AuthButton = withRouter(
       <p>bạn chưa đăng nhập.</p>
     )
 );
-export default AuthExample;
+
+ 
+class App extends Component {
+  render() { 
+    return (
+      <Router>
+        <div>
+          <AuthButton />
+          <ul>
+            <li>
+              <Link to="/public">Public Page</Link>
+            </li>
+            <li>
+              <Link to="/protected">Protected Page</Link>
+            </li>
+          </ul>
+          <RouterURL/>
+        </div>
+      </Router>
+    );
+  }
+}
+ 
+export default App;
