@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import fakeAuth from './faceAuth';
+import fakeAuth from './fakeAuth';
 import {Redirect} from "react-router-dom";
 import { connect } from 'react-redux';
 class Login extends Component {
@@ -22,7 +22,6 @@ class Login extends Component {
     }
   }
   render() {
-    console.log(this.props.reducerStateLoginAuth.dataLogin);
     let { from } = this.props.location.state || { from: { pathname: "/" } };
     let { redirectToReferrer } = this.state;
     if (redirectToReferrer) return <Redirect to={from} />;

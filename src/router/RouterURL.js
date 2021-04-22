@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Route} from "react-router-dom";
-import Login from '../components/Login';
-import Protecred from '../components/Protecred';
-import Public from '../components/Public';
-import ComponentsPrivate from '../componentsPrivate/ComponentsPrivate';
+import Login from '../RedirectAuth/Login';
+import Protecred from '../componentsPublic/Protecred';
+import Public from '../componentsPublic/Public';
+import ComponentsPrivate from '../RouterPrivateAuth/ComponentsPrivate';
 class RouterURL extends Component {
     render() { 
         return (

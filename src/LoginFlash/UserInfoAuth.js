@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from "react";
 import firebase from "firebase";
 import Login from "./LoginAuth";
-import {firebaseApp} from "./base";
-import RouterURL from "../router/RouterURL";
+import {firebaseApp} from "../FirebaseConfig/base";
+import RouterURL from "../Router/RouterURL";
 import {Link} from "react-router-dom";
 import { connect } from "react-redux";
 class UserInfoAuth extends Component {
