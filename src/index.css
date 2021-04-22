@@ -1,13 +1,33 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button.github,
+input[type=submit].github,
+button.facebook,
+input[type=submit].facebook {
+  border: 0;
+  display: block;
+  margin-bottom: 2rem;
+  width: 100%;
+  color: #fff;
+  padding: 2rem;
+}
+button.github,
+input[type=submit].github {
+  background: #82d465;
+}
+button.github:after,
+input[type=submit].github:after {
+  background: #5cc437;
+}
+button.facebook,
+input[type=submit].facebook {
+  background: #3864a3;
+}
+button.facebook:after,
+input[type=submit].facebook:after {
+  background: #2d5082;
 }

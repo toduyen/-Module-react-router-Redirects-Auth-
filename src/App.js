@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {BrowserRouter as Router,Link,withRouter} from "react-router-dom";
 import RouterURL from "./router/RouterURL";
 import fakeAuth from '../src/components/faceKae';
+import UserInfo from "../src/Firebase/ComponentsFireBase/UserInfo";
 const AuthButton = withRouter(
   ({ history }) =>
     fakeAuth.isAuthenticated ? (
@@ -25,6 +26,14 @@ class App extends Component {
   render() { 
     return (
       <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">
+              Welcome to React JS Social Oauth Login App
+            </h1>
+          </header>
+          <UserInfo />
+        </div>
         <div>
           <AuthButton />
           <ul>
